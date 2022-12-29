@@ -4,6 +4,7 @@ import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 
 dotenv.config()
+console.log(process.env.OPENAI_API_KEY)
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -20,8 +21,6 @@ app.get('/', async (req, res) => {
     message: 'Hello from OS AI!'
   })
 })
-
-
 
 app.post('/', async (req, res) => {
   try {
